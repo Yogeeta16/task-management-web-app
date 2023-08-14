@@ -1,0 +1,35 @@
+.btn {
+  border-radius: 100px;
+}
+.button {
+  background-color: #695cfe;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+body.dark .subtask-button {
+  border: none;
+  background-color: #fff;
+  color: #695cfe;
+}
+.subtask-button {
+  background-color: #695cfe;
+
+  border: 1px solid #6b6868;
+
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

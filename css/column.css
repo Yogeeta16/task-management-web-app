@@ -1,0 +1,13 @@
+.swim-lane {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  min-width: 350px;
+  min-height: 120px;
+  flex-shrink: 0;
+}
+
+.swim-lane li {
+  list-style-type: none;
+}

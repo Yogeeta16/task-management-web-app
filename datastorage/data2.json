@@ -1,0 +1,48 @@
+{
+    "name": "Platform Launch",
+    "columns": [
+        {
+    "name": "Todo",
+    "tasks": [
+      {
+        "title": "",
+        "description": "",
+        "status": "",
+        "subtasks": [
+          {
+            "title": ""           
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Doing",
+    "tasks": [
+        {
+          "title": "",
+          "description": "",
+          "status": "",
+          "subtasks": [
+            {
+              "title": ""           
+            }
+          ]
+        }
+      ]
+  },
+  {
+    "name": "Done",
+    "tasks": [
+        {
+          "title": "",
+          "description": "",
+          "status": "",
+          "subtasks": [
+            {
+              "title": ""           
+            }
+          ]
+        }
+      ]
+  }]}

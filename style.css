@@ -1,0 +1,68 @@
+@import "./css/addnewtask.css";
+@import "./css/button.css";
+@import "./css/column.css";
+@import "./css/navbar.css";
+@import "./css/sidebar.css";
+@import "./css/taskcard.css";
+/* @import "./css/taskupdate.css"; */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:ght@308;400;500;600;700&display-swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body {
+  height: 100vh;
+  background: var(--body-color);
+  transition: var(--tran-04);
+}
+body.dark {
+  --body-color: #21212d;
+  --sidebar-color: #2c2c38;
+  --primary-color: #33333d;
+  --primary-color-light: #4f4f57;
+  --cardheading-color: #e4e9f7;
+  --card-color: #2c2c38;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+}
+
+:root {
+  --body-color: #e4e9f7;
+  --sidebar-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --cardheading-color: #21212d;
+  --toggle-color: #ddd;
+  --card-color: #fff;
+  --text-color: #707070;
+  --tran-02: all 0.4s ease;
+  --tran-03: all 0.4s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.4s ease;
+}
+
+.fullboard {
+  position: relative;
+  height: 100vh;
+  left: 250px;
+  width: calc(100% - 250px);
+  background: var(--body-color);
+  transition: var(--tran-05);
+}
+.fullboard .text {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 8px 40px;
+}
+.sidebar.close ~ .fullboard {
+  left: 88px;
+  width: calc(100% - 88px);
+}

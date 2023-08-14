@@ -1,0 +1,39 @@
+/* .modal{
+    opacity: 0.5;
+} */
+*::-webkit-scrollbar {
+    display: none;
+  }
+.modal-content {
+  display: block;
+  position: absolute;
+  overflow: scroll;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: auto;
+  background: var(--sidebar-color);
+  padding: 20px;
+}
+.newTaskForm label {
+  /* position: absolute; */
+  background: var(--sidebar-color);
+  color: var(--text-color);
+}
+
+.newTaskForm textarea, input[type="text"],
+select {
+  width: 100%;
+  padding: 10px 16px;
+  margin: 8px 0;
+  display: inline-block;
+  background: var(--sidebar-color);
+  color: var(--text-color);
+  border: 1px solid #6b6868;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.newTaskForm button{
+    width: 100%;
+}

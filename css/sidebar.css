@@ -1,0 +1,196 @@
+.sidebar.close {
+  width: 88px;
+}
+
+.sidebar.text {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: var(--tran-03);
+  white-space: nowrap;
+  opacity: 1;
+}
+.sidebar.close .text {
+  opacity: 0;
+}
+
+.sidebar .imager {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar .menu {
+  margin-top: 30px;
+}
+.sidebar .menu-links {
+  padding-left: 0;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(--sidebar-color);
+  transition: var(--tran-05);
+  z-index: 100;
+}
+
+.sidebar li {
+  height: 50px;
+  /* background: red; */
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.sidebar li .icon {
+  font-size: 30px;
+  max-width: 60px;
+
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+  transition: var(--tran-03);
+  color: var(--text-color);
+}
+.sidebar .img-text img {
+  width: 40px;
+  border-radius: 6px;
+}
+.sidebar header .img-text {
+  display: flex;
+  align-items: center;
+}
+
+header .img-text .header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-text .name {
+  font-weight: 600;
+  
+  color: var(--cardheading-color);
+}
+.sidebar header {
+  position: relative;
+}
+.sidebar header .toggle {
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 25px;
+  width: 25px;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--sidebar-color);
+  font-size: 22px;
+}
+body.dark .sidebar header .toggle {
+  transform: rotate(180deg);
+  color: var(--text-color);
+}
+.sidebar.close header .toggle {
+  transform: translateY(-50%);
+}
+.sidebar li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(--tran-04);
+}
+.sidebar li a:hover {
+  background-color: var(--primary-color);
+}
+.sidebar li a:hover .text,
+.sidebar li a:hover .icon {
+  color: var(--sidebar-color);
+}
+body.dark .sidebar li a:hover .text,
+body.dark .sidebar li a:hover .icon {
+  color: var(--text-color);
+}
+
+.sidebar .menu-bar {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu-bar .mode {
+  position: relative;
+  border-radius: 6px;
+  background: var(--primary-color-light);
+}
+.menu-bar .mode .moon-sun {
+  height: 50px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+}
+.menu-bar .mode i {
+  position: absolute;
+}
+body.dark .sidebar header .toggle {
+  color: var(--text-color);
+}
+
+.menu-bar .mode i.sun {
+  opacity: 0;
+}
+body.dark .menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+  display: flex;
+  position: absolute;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 60px;
+  cursor: pointer;
+  background: var(--primary-color-light);
+}
+.toggle-switch .switch {
+  position: relative;
+  height: 22px;
+  width: 44px;
+  background: var(--toggle-color);
+  border-radius: 25px;
+}
+.switch::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
+  transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+  left: 25px;
+}

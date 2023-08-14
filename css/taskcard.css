@@ -1,0 +1,47 @@
+.board {
+    width: 100%;
+    height: 100%;
+    /* background: #707070; */
+  }
+  
+  .cardContainer {
+    background-color: var(--card-color);
+    padding: 20px 25px;
+    border-radius: 8px;
+    max-width: 100%;
+    font-family: sans-serif;
+    cursor: move;
+  }
+  
+  .cardHeading {
+    color: var(--cardheading-color);
+    font: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  
+  .cardDescription {
+    font: 14p;
+    color: #6c707e;
+  }
+  .is-dragging {
+    scale: 1.05;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background: rgb(50, 50, 50);
+    color: white;
+  }
+  .heading {
+    font-size: 22px;
+    font-weight: bold;
+  
+    color: var(--cardheading-color);
+    margin-bottom: 8px;
+  }
+  .lanes {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 16px;
+    padding: 24px 32px;
+  }
+  

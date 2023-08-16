@@ -83,52 +83,12 @@
         <!-- <div class="text">Dashboard</div> -->
         <div class="board">
 
-            <div id="create-new-task-modal" class="modal">
-
-                <!-- Modal content -->
-                <div id="modal-form" class="modal-content">
-                    <form class="newTaskForm">
-
-                        <label> Title </label> <br>
-                        <input type="text" id="input-title" name="title" /> <br>
-
-                        <label>Description </label>
-                        <br>
-                        <textarea cols="60" rows="5" value="description" id="description"></textarea>
-                        <br>
-
-                        <label> Subtasks </label> <br>
-                        <input type="text" /> <br>
-                        <input type="text" /> <br>
-                        <button class="subtask-button btn">Add subtasks</button>
-                        <br>
-                        <label>
-                            Status :
-                        </label>
-                        <br>
-                        <select>
-                            <option value="doing">doing</option>
-                            <option value="done">done</option>
-                            <option value="todo">to do</option>
-
-                        </select>
-                        <br>
-                        <button class=" button btn " id="createtaskbtn" type="submit">Create Task</button>
-                        <br>
-                    </form>
-
-
-                </div>
-
-            </div>
-
-
-
             <div class="lanes">
 
                 <container class="swim-lane" id="todo-lane">
-                    <h2 class="heading"><i class="fa-sharp fa-solid fa-circle " style="color: #3084ff;"></i> To DO</h2>
-                    <ul id="todo-list">
+                    <h2 class="heading"><i class="fa-sharp fa-solid fa-circle " style="color: #3084ff;"></i> To DO <span
+                            id="item-count-todo"></span></h2>
+                    <ul id="todo-list" class="list">
 
                     </ul>
                     <!-- <li class="cardContainer task " draggable="true">
@@ -139,8 +99,9 @@
                 </container>
 
                 <container class="swim-lane" id="doing-lane">
-                    <h2 class="heading"><i class="fa-sharp fa-solid fa-circle" style="color: #26c04d;"></i>Doing </h2>
-                    <ul id="doing-list">
+                    <h2 class="heading"><i class="fa-sharp fa-solid fa-circle" style="color: #26c04d;"></i>Doing <span
+                            id="item-count-doing"></span></h2>
+                    <ul id="doing-list" class="list">
 
                     </ul>
                     <!-- 
@@ -152,8 +113,9 @@
                 </container>
 
                 <container class="swim-lane" id="done-lane">
-                    <h2 class="heading"><i class="fa-sharp fa-solid fa-circle" style="color: #71f4f1;"></i>done</h2>
-                    <ul id="done-list">
+                    <h2 class="heading"><i class="fa-sharp fa-solid fa-circle" style="color: #71f4f1;"></i>done <span
+                            id="item-count-done"></span></h2>
+                    <ul id="done-list" class="list">
 
                     </ul>
                     <!-- 
@@ -165,12 +127,52 @@
             </div>
         </div>
 
+        <div id="create-new-task-modal" class="modal">
+
+            <!-- Modal content -->
+            <div id="modal-form" class="modal-content">
+                <form class="newTaskForm">
+
+                    <label> Title </label> <br>
+                    <input type="text" id="input-title" name="title" /> <br>
+
+                    <label>Description </label>
+                    <br>
+                    <textarea cols="60" rows="5" id="description"></textarea>
+                    <br>
+                    <div id="subtask-field">
+                        <label> Subtasks </label> <br>
+                        <!-- <input type="text" /> <br>
+                        <input type="text" /> <br> -->
+
+                    </div>
+                    <button class="subtask-button btn" id="create-subtask" type="submit">Add subtasks</button>
+                    <br>
+                    <label>
+                        Status :
+                    </label>
+                    <br>
+                    <select id="status-field">
+                        <option value="todo">Todo</option>
+                        <option value="doing">Doing</option>
+                        <option value="done">done</option>
+
+                    </select>
+                    <br>
+                    <button class=" button btn " id="createtaskbtn" type="submit">Create Task</button>
+                    <br>
+                </form>
+
+
+            </div>
+
+        </div>
 
     </section>
 
     <script src="script.js"></script>
     <script src="./modals/addnewtask.js"></script>
-
+    <script src="./components/dragacction.js"></script>
     <script src="./components/sidebar.js"></script>
 
 

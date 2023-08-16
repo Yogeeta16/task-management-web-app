@@ -10,4 +10,10 @@
 
 .swim-lane li {
   list-style-type: none;
+  margin: 1rem;
+}
+
+.swim-lane ul{
+padding-left: 0;
+
 }

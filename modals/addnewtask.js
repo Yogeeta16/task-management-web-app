@@ -84,9 +84,18 @@ createtaskbtn.addEventListener("click", function (e) {
   cardDiv.appendChild(cardDescription);
 
   let status = status_field.value;
-  if (status === "todo") listtodo.appendChild(cardDiv);
-  else if (status === "doing") listdoing.appendChild(cardDiv);
-  else if (status === "done") listdone.appendChild(cardDiv);
+  if (status === "Todo") {
+    listtodo.appendChild(cardDiv);
+    countitemtodo += 1;
+  } else if (status === "Doing") {
+    listdoing.appendChild(cardDiv);
+    countitemdoing += 1;
+  } else if (status === "Done") {
+    listdone.appendChild(cardDiv);
+    countitemdone += 1;
+  } else {
+    console.log("error");
+  }
 
   modal.style.display = "none";
 
@@ -104,9 +113,9 @@ createtaskbtn.addEventListener("click", function (e) {
   //   status === "Todo" ? listTodos : status === "Doing" ? listDoing : listDone;
   // targetList.appendChild(listcontainer);
 
-  if (status === "Todo") countitemtodo++;
-  else if (status === "Doing") countitemdoing++;
-  else if (status === "Done") countitemdone++;
+  // if (status === "Todo") ;
+  // else if (status === "Doing")
+  // else if (status === "Done") ;
 
   updateCounts();
   updateLocalStorage();
@@ -151,7 +160,7 @@ window.addEventListener("DOMContentLoaded", () => {
     countitemdoing = savedData.countDoing || 0;
     countitemdone = savedData.countDone || 0;
 
-    updateCounts();
+    // updateCounts();
   }
 });
 
@@ -179,3 +188,70 @@ createsubtask.addEventListener("click", (e) => {
     deletesubtaskfield.remove();
   });
 });
+//=====================================drag and drop =================================================================//
+document.querySelectorAll(".list").forEach((listcontainer) => {
+  listcontainer.addEventListener("dragstart", dragstart);
+  listcontainer.addEventListener("dragend", dragend);
+  listcontainer.addEventListener("dragover", dragover);
+  listcontainer.addEventListener("dragenter", dragenter);
+  listcontainer.addEventListener("dragleave", dragleave);
+  listcontainer.addEventListener("drop", drop);
+});
+
+function dragstart(e) {
+  e.dataTransfer.setData("text/plain", e.target.id);
+  e.target.classList.add("dragging");
+  updateCounts();
+  updateLocalStorage();
+}
+
+function dragend(e) {
+  e.target.classList.remove("dragging");
+  updateCounts();
+  updateLocalStorage();
+}
+
+function dragover(e) {
+  e.preventDefault();
+  console.log("dragover");
+}
+
+function dragenter() {
+  console.log("dragenter");
+}
+
+function dragleave() {
+  console.log("dragleave");
+}
+function drop(e) {
+  e.preventDefault();
+  const draggedItem = document.querySelector(".dragging");
+  if (draggedItem) {
+    e.target.appendChild(draggedItem);
+
+    let status = status_field.value;
+
+    if (status === "Todo") countitemtodo -= 1;
+    else if (status === "Doing") countitemdoing -= 1;
+    else if (status === "Done") countitemdone -= 1;
+
+    const newStatus = e.target.getAttribute("data-status");
+    if (newStatus === "Todo") {
+      // e.status = "Todo";
+      // e.setAttribute(status_field, "Todo");
+      countitemtodo += 1;
+    } else if (newStatus === "Doing") {
+      // e.status = "Doing";
+      // e.setAttribute(status_field, "Doing");
+      countitemdoing += 1;
+    } else if (newStatus === "Done") {
+      // e.status = "Done";
+      // e.setAttribute(status_field, "Done");
+      countitemdone += 1;
+    }
+
+    draggedItem.classList.remove("dragging");
+    updateCounts();
+    updateLocalStorage();
+  }
+}

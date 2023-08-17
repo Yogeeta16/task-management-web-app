@@ -86,9 +86,9 @@
             <div class="lanes">
 
                 <container class="swim-lane" id="todo-lane">
-                    <h2 class="heading"><i class="fa-sharp fa-solid fa-circle " style="color: #3084ff;"></i> To DO <span
+                    <h2 class="heading"><i class="fa-sharp fa-solid fa-circle " style="color: #3084ff;"></i>Todo <span
                             id="item-count-todo"></span></h2>
-                    <ul id="todo-list" class="list">
+                    <ul id="todo-list" class="list" data-status="Todo">
 
                     </ul>
                     <!-- <li class="cardContainer task " draggable="true">
@@ -101,7 +101,7 @@
                 <container class="swim-lane" id="doing-lane">
                     <h2 class="heading"><i class="fa-sharp fa-solid fa-circle" style="color: #26c04d;"></i>Doing <span
                             id="item-count-doing"></span></h2>
-                    <ul id="doing-list" class="list">
+                    <ul id="doing-list" class="list" data-status="Doing">
 
                     </ul>
                     <!-- 
@@ -115,7 +115,7 @@
                 <container class="swim-lane" id="done-lane">
                     <h2 class="heading"><i class="fa-sharp fa-solid fa-circle" style="color: #71f4f1;"></i>done <span
                             id="item-count-done"></span></h2>
-                    <ul id="done-list" class="list">
+                    <ul id="done-list" class="list" data-status="Done">
 
                     </ul>
                     <!-- 
@@ -152,10 +152,10 @@
                         Status :
                     </label>
                     <br>
-                    <select id="status-field">
-                        <option value="todo">Todo</option>
-                        <option value="doing">Doing</option>
-                        <option value="done">done</option>
+                    <select id="status-field" >
+                        <option value="Todo">Todo</option>
+                        <option value="Doing">Doing</option>
+                        <option value="Done">done</option>
 
                     </select>
                     <br>

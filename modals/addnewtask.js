@@ -99,24 +99,6 @@ createtaskbtn.addEventListener("click", function (e) {
 
   modal.style.display = "none";
 
-  //   // let todolistobj = [
-  //   //   {
-  //   //     title: "",
-  //   //     description: "",
-  //   //     status: "",
-  //   //   },
-  //   // ]
-
-  // Storing the targetlist in the target list and then append to the listcontainer of the target list
-  // // const status = statusTaskField.value;
-  // const targetList =
-  //   status === "Todo" ? listTodos : status === "Doing" ? listDoing : listDone;
-  // targetList.appendChild(listcontainer);
-
-  // if (status === "Todo") ;
-  // else if (status === "Doing")
-  // else if (status === "Done") ;
-
   updateCounts();
   updateLocalStorage();
 
@@ -189,6 +171,7 @@ createsubtask.addEventListener("click", (e) => {
   });
 });
 //=====================================drag and drop =================================================================//
+
 document.querySelectorAll(".list").forEach((listcontainer) => {
   listcontainer.addEventListener("dragstart", dragstart);
   listcontainer.addEventListener("dragend", dragend);
@@ -213,15 +196,15 @@ function dragend(e) {
 
 function dragover(e) {
   e.preventDefault();
-  console.log("dragover");
+  // console.log("dragover");
 }
 
 function dragenter() {
-  console.log("dragenter");
+  // console.log("dragenter");
 }
 
 function dragleave() {
-  console.log("dragleave");
+  // console.log("dragleave");
 }
 function drop(e) {
   e.preventDefault();
@@ -235,17 +218,23 @@ function drop(e) {
     else if (status === "Doing") countitemdoing -= 1;
     else if (status === "Done") countitemdone -= 1;
 
+    // const previousStatus = e.target.value;
+
+    // if (previousStatus === "Todo") countitemtodo -= 1;
+    // else if (previousStatus === "Doing") countitemdoing -= 1;
+    // else if (previousStatus === "Done") countitemdone -= 1;
+
     const newStatus = e.target.getAttribute("data-status");
     if (newStatus === "Todo") {
-      // e.status = "Todo";
+      // e.status_field.value = "Todo";
       // e.setAttribute(status_field, "Todo");
       countitemtodo += 1;
     } else if (newStatus === "Doing") {
-      // e.status = "Doing";
+      // e.status_field.value = "Doing";
       // e.setAttribute(status_field, "Doing");
       countitemdoing += 1;
     } else if (newStatus === "Done") {
-      // e.status = "Done";
+      // e.status_field.value = "Done";
       // e.setAttribute(status_field, "Done");
       countitemdone += 1;
     }

@@ -18,10 +18,6 @@ let inputfield = document.getElementById("input-title");
 let descriptionfield = document.getElementById("description");
 let createtaskbtn = document.getElementById("createtaskbtn");
 
-// const todo_lane = document.getElementById("todo-lane");
-// const doing_lane = document.getElementById("doing-lane");
-// const done_lane = document.getElementById("done-lane");
-
 let status_field = document.getElementById("status-field");
 
 const countTaskTodos = document.getElementById("item-count-todo");
@@ -51,6 +47,7 @@ window.onclick = function (event) {
 };
 
 //=====================================================================================================================//
+
 let titlevalue = "";
 inputfield.addEventListener("input", function (e) {
   titlevalue = e.target.value;
@@ -60,7 +57,22 @@ let descriptionvalue = "";
 descriptionfield.addEventListener("input", function (e) {
   descriptionvalue = e.target.value;
 });
+
+// function countListItems() {
+//   var listItems = document.getElementsByTagName("li");
+//   var totalListItems = listItems.length;
+//   return totalListItems;
+// }
+
+function countListItems(listID) {
+  var ul = document.getElementById(listID);
+  var i = 0,
+    itemCount = 0;
+  while (ul.getElementsByTagName("li")[i++]) itemCount++;
+  return itemCount;
+}
 //=====================================================================================================================//
+
 createtaskbtn.addEventListener("click", function (e) {
   e.preventDefault();
   // localStorage.clear();
@@ -109,6 +121,11 @@ createtaskbtn.addEventListener("click", function (e) {
 
 // Function for update the counts for localstorage
 const updateCounts = () => {
+  // countListItems();
+
+  countitemdoing = countListItems("doing-list");
+  countitemdone = countListItems("done-list");
+  countitemtodo = countListItems("todo-list");
   countTaskTodos.textContent = `(${countitemtodo})`;
   countTaskDoing.textContent = `(${countitemdoing})`;
   countTaskDone.textContent = `(${countitemdone})`;
@@ -142,7 +159,7 @@ window.addEventListener("DOMContentLoaded", () => {
     countitemdoing = savedData.countDoing || 0;
     countitemdone = savedData.countDone || 0;
 
-    // updateCounts();
+    updateCounts();
   }
 });
 
@@ -212,31 +229,13 @@ function drop(e) {
   if (draggedItem) {
     e.target.appendChild(draggedItem);
 
-    let status = status_field.value;
-
-    if (status === "Todo") countitemtodo -= 1;
-    else if (status === "Doing") countitemdoing -= 1;
-    else if (status === "Done") countitemdone -= 1;
-
-    // const previousStatus = e.target.value;
-
-    // if (previousStatus === "Todo") countitemtodo -= 1;
-    // else if (previousStatus === "Doing") countitemdoing -= 1;
-    // else if (previousStatus === "Done") countitemdone -= 1;
-
     const newStatus = e.target.getAttribute("data-status");
     if (newStatus === "Todo") {
-      // e.status_field.value = "Todo";
-      // e.setAttribute(status_field, "Todo");
-      countitemtodo += 1;
+      // countitemtodo += 1;
     } else if (newStatus === "Doing") {
-      // e.status_field.value = "Doing";
-      // e.setAttribute(status_field, "Doing");
-      countitemdoing += 1;
+      // countitemdoing += 1;
     } else if (newStatus === "Done") {
-      // e.status_field.value = "Done";
-      // e.setAttribute(status_field, "Done");
-      countitemdone += 1;
+      // countitemdone += 1;
     }
 
     draggedItem.classList.remove("dragging");
